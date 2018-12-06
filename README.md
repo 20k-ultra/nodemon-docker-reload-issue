@@ -16,7 +16,7 @@ docker-compose up
 ```
 then make changes to `src/index.js`  and app will throw error but is still serving. This can be seen by running:
 
- `curl -I localhost:8888`
+ `curl -I localhost:8080`
 
 If you want to get bash access to the container do:
 ```
