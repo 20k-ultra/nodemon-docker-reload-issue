@@ -1,0 +1,21 @@
+
+version: '3'
+
+services:
+
+  api:
+    container_name: nodemon_nodejs
+    build:
+      context: ./
+    hostname: api
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./.env:/www/.env
+      - ./src/:/www/src
+      - ./api-entrypoint.sh/:/www/api-entrypoint.sh
+      - node_modules:/www/node_modules
+    entrypoint: "./api-entrypoint.sh"
+
+volumes:
+  node_modules:
